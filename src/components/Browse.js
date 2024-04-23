@@ -1,15 +1,19 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import Header from './Header'
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+import Header from "./Header";
+import MainContainer from "./MainContainer";
+import SecondaryContainer from "./SecondaryContainer";
 
 const Browse = () => {
-  const email = useSelector((store) => store.user)
-  console.log('From Browse',email)
+
+  useNowPlayingMovies()
+
   return (
     <div>
       <Header />
+      <MainContainer />
+      <SecondaryContainer />
     </div>
-  )
-}
+  );
+};
 
-export default Browse
+export default Browse;
