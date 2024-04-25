@@ -17,6 +17,11 @@
 - Fetched the Now Playing Movie Data from TMDB
 - Created a custom Hook and Slice for Fetching and Storing the Now Playing Movie Data
 - Created the Component's Skeleton to make the Ui Like Netflix
+- Fetching the Data for Main Container and Secondary Container
+- Creating the Main Container and Playing the video
+- Creating the Secondary Container and Adding the Card as in Netflix
+- Adding Now Playing, Trending, Popular and Upcoming Sections
+
 
 
 
