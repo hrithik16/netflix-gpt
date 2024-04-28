@@ -25,6 +25,7 @@
 - Initializing Multilingual Feature in our APP
 - Inititalize OpenAI API
 - Fetching the suggestions from OpenAI for user Search
+- Memoization
 
 
 
