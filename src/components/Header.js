@@ -5,11 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
 import { LOGO, SUPPORTED_LANGUAGES, USER_AVATAR1 } from "../utils/constant";
-import { toggleSearchView } from "../utils/searchSlice";
+import { removeSearch, toggleSearchView } from "../utils/searchSlice";
 import { changeLanguage } from "../utils/configSlice";
 import searchIcon from "../assets/magnifying-glass.svg";
 import homeIcon from '../assets/house-solid.svg'
 import signOutIcon from "../assets/arrow-right-from-bracket-solid.svg";
+import { removeMovie } from "../utils/moviesSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -26,6 +27,8 @@ const Header = () => {
         navigate("/browse");
       } else {
         dispatch(removeUser());
+        dispatch(removeMovie())
+        dispatch(removeSearch())
         navigate("/");
       }
     });
