@@ -7,11 +7,15 @@ import { useNavigate } from "react-router-dom";
 import { LOGO, SUPPORTED_LANGUAGES, USER_AVATAR1 } from "../utils/constant";
 import { toggleSearchView } from "../utils/searchSlice";
 import { changeLanguage } from "../utils/configSlice";
+import searchIcon from "../assets/magnifying-glass.svg";
+import homeIcon from '../assets/house-solid.svg'
+import signOutIcon from "../assets/arrow-right-from-bracket-solid.svg";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
+  const showSearch = useSelector((store) => store.search.showSearch);
 
   useEffect(() => {
     // onAuthStateChanged returns a unsubscirbe function
@@ -49,29 +53,25 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between bg-transparent">
+    <div className="absolute w-screen py-2 bg-gradient-to-b from-black z-10 flex justify-between bg-transparent">
       <img className="w-44" src={LOGO} alt="logo-img" />
       <div className="flex p-2">
         {user && (
           <>
-            <button
-              className="py-2 px-4 mx-4 my-2 text-white rounded-lg"
-              onClick={handleSearch}
-            >
-              🔎
+            <button className="mx-6 my-2 w-6" onClick={handleSearch}>
+              <img src={showSearch?homeIcon:searchIcon} alt="search-icon" />
             </button>
-            <img className="w-12 h-12" alt="usericon" src={USER_AVATAR1} />
-            <button onClick={handleSignOut} className="font-bold text-white">
-              (Sign Out)
+            <button onClick={handleSignOut} className="mx-6 my-2 w-6">
+              <img src={signOutIcon} alt="signout-icon" />
             </button>
           </>
         )}
         <select
-          className="p-2 m-2 bg-gray-900 text-white"
+          className="p-2 mr-2 bg-transparent text-white"
           onChange={handleLanguageChange}
         >
           {SUPPORTED_LANGUAGES.map((lang) => (
-            <option key={lang.identifer} value={lang.identifer}>
+            <option key={lang.identifer} value={lang.identifer} className="bg-black">
               {lang.name}
             </option>
           ))}

@@ -5,7 +5,7 @@ const SearchBar = () => {
   const { searchText, handleSearchClick, selectedLanguage } = useMovieSearch();
 
   return (
-    <div className="pt-[20%] flex justify-center">
+    <div className="pt-[5%] flex justify-center">
       <form
         className="bg-black w-1/2 grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
