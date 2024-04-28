@@ -21,6 +21,10 @@
 - Creating the Main Container and Playing the video
 - Creating the Secondary Container and Adding the Card as in Netflix
 - Adding Now Playing, Trending, Popular and Upcoming Sections
+- Adding Search Bar Feature
+- Initializing Multilingual Feature in our APP
+- Inititalize OpenAI API
+- Fetching the suggestions from OpenAI for user Search
 
 
 
