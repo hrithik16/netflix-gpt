@@ -1,16 +1,26 @@
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 const passwordRegex =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-const nameRegex = /^[a-zA-Z]+(?:\s[a-zA-Z]+)*$/;
 
-export const isDataValid = (email, password, name) => {
-  let isValidName = true;
-  if (name) isValidName = nameRegex.test(name);
+export const isPasswordValid = (password1, password2) => {
 
-  if (!isValidName) return "Please enter a valid name";
 
-  let isValidEmail = emailRegex.test(email);
-  if (!isValidEmail) return "Please enter a valid email address";
-  let isValidPassword = passwordRegex.test(password);
-  if (!isValidPassword) return "invalid password";
+  
+  let isValidPassword = passwordRegex.test(password1);
+
+  if (!isValidPassword) return 0
+
+  if (password1 !== password2) return 1
+
+  return -1
 };
+
+export const isEmailValid = (email) => {
+  return emailRegex.test(email);
+  // if (!isValidEmail) return "Please enter a valid email address";
+
+  // return true
+}
+// "Sorry, the password you entered is invalid. Please ensure your password meets the required criteria
+
+// "Uh-oh! The passwords you entered don't match."
